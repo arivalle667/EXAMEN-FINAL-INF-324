@@ -1,0 +1,107 @@
+//BD flujo
+
+create table proceso(
+    codflujo varchar(3),
+    codproceso varchar(4),
+    codprocesosig varchar (4),
+    tipo varchar(1),
+    rol varchar(4),
+    pantalla varchar(30)
+)
+
+insert into proceso values('F1','P1','P2','I','G','inicio.inc.php');
+insert into proceso values('F1','P2','P3','P','EP','planhitos.inc.php');
+insert into proceso values('F1','P3','P4','P','EO','ejecucion.inc.php');
+insert into proceso values('F1','P4','P5','P','EO','registrar.inc.php');
+insert into proceso values('F1','P5','P6','P','EM','segymon.inc.php');
+insert into proceso values('F1','P6',null,'C','EM','progadec.inc.php');
+insert into proceso values('F1','P7',null,'C','EO','tareascomp.inc.php');
+insert into proceso values('F1','P8','P9','P','ER','gestion.inc.php');
+insert into proceso values('F1','P9','P1','P','S','revhitos.inc.php');
+
+create table procesocond(
+    codflujo varchar(3),
+    codproceso varchar(4),
+    codprocesosi varchar (4),
+    codprocesono varchar (4)
+)
+
+insert into procesocond values ('F1','P6','P7','P8');
+insert into procesocond values ('F1','P7','P9','P3');
+		
+
+
+create table seguimiento(
+    nrocontrol int,
+    codflujo varchar(3),
+    codproceso varchar(4),
+    usuario	varchar(10),
+    fechaini date,
+    fechafin date
+)
+
+insert into seguimiento values(100,'F1','P1','ariel','2020-5-22','2020-5-23');
+insert into seguimiento values(100,'F1','P2','ariel','2020-5-23','2020-5-24');
+insert into seguimiento values(100,'F1','P3','ariel','2024-5-24','2024-5-25');
+insert into seguimiento values(100,'F1','P3','jose','2024-5-5',null);
+insert into seguimiento values(200,'F1','P1','ariel','2025-5-26',null);
+insert into seguimiento values(210,'F1','P1','ariel','2026-5-27',null);
+
+
+//BD controlproy
+
+create table proyecto(
+    codproy varchar(3),
+    nombre varchar(20),
+    descripcion varchar(50),
+    fecha varchar (11)
+)
+
+create table lider(
+    codlider int,
+    nombre varchar(20)
+)
+
+create table hito(
+    codproy varchar(3).
+    codhito varchar(3),
+    descripcion varchar(50),
+    fecha varchar (11)
+)
+
+create table progreso(
+    codproy varchar(3),
+    codhito varchar(3),
+    codprogreso varchar(3),
+    fecha varchar(11),
+    descripcion(50)
+)
+
+create table informemon(
+    codproy varchar(3),
+    codhito varchar(3),
+    codmon varchar(3),
+    fecha varchar(11),
+    descripcion(50)
+)
+
+create table gestriesgos(
+    codproy varchar(3),
+    codmon varchar(3),
+    fecha varchar(11),
+    descripcion(50)
+)
+
+create table informesup(
+    codproy varchar(3),
+    codsup varchar(3),
+    fecha varchar(11),
+    descripcion(50)
+)
+
+create table reportefinal(
+    codproy varchar(3),
+    codrfin varchar(3),
+    fecha varchar(11),
+    descripcion(50)
+)

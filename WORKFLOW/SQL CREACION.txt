@@ -1,0 +1,4 @@
+-- Nombre del servidor:localhost
+-- Nombre de usuario: root
+-- Password:
+-- Nombre de la bd: flujo
